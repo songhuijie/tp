@@ -1,0 +1,28 @@
+<html>
+<body>
+<div>
+    <p>测试{$name}</p>
+    <p>time: {$data['time']|date='Y-m-d H:i'}</p>
+    <p>number: {$data['number']}</p>
+    <p>number: {$data['number']|format='%02d'}</p>
+    <p>name:  {$data['name']}</p>
+    <p>name:  {$data['name']|substr=0,3}</p>
+    <p>合体: {$data['name']|md5|upper|substr=0,3}</p>
+    <p>
+        缓存name :{:app('cache')->get('name')}
+    </p>
+    <p>
+        请求name 结果 {:think\\facade\\Request::get('name')}
+    </p>
+    <p>{$a ?? '默认值'}</p>
+
+    <p>
+        {literal}
+        Hello,{$name}！
+        {/literal}
+    </p>
+
+    {// 这是模板注释内容 }
+</div>
+</body>
+</html>
